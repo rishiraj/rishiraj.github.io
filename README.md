@@ -17,6 +17,14 @@
 
 - ⚡ Fun fact **I'm a national level Chess player, a swimming champion and I can lecture for hours on the outer reaches of space and the craziness of astrophysics.**
 
+<h3 align="left">Experiences:</h3>
+
+***[Dynopii Inc.](https://dynopii.com/) (Machine Learning Engineer)***  
+Working on ML pipelines for conversational AI, speech / audio generation, conversion and deployment.
+
+***[Celebal Technologies Pvt. Ltd.](https://celebaltech.com/) (Data Scientist)***  
+Worked on Classical ML, NLP, Statistical Algorithm, Computer Vision, Deep Learning, Python and SQL.
+
 <h3 align="left">Recommendations:</h3>
 
 ***[Sayak Paul](https://sayak.dev)***  
