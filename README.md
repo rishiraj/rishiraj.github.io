@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" href="https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/font.css">
+</head>
 <h1 align="center">Hi 👋, I'm Rishiraj Acharya</h1>
 <h3 align="center">GSoC 2022 at TensorFlow 👨🏻‍🔬 | Kaggle Competitions Master 🧠 | Dynopii ML Engineer 👨🏻‍💻 | Microsoft, DeepLearning.AI Ambassador ✨</h3>
 
