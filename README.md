@@ -19,10 +19,10 @@
 
 <h3 align="left">Experiences:</h3>
 
-***[Dynopii Inc.](https://dynopii.com/) (Machine Learning Engineer)***  
+- ***[Dynopii Inc.](https://dynopii.com/) (Machine Learning Engineer)***  
 Working on ML pipelines for conversational AI, speech / audio generation, conversion and deployment.
 
-***[Celebal Technologies Pvt. Ltd.](https://celebaltech.com/) (Data Scientist)***  
+- ***[Celebal Technologies Pvt. Ltd.](https://celebaltech.com/) (Data Scientist)***  
 Worked on Classical ML, NLP, Statistical Algorithm, Computer Vision, Deep Learning, Python and SQL.
 
 <h3 align="left">Recommendations:</h3>
@@ -35,6 +35,12 @@ MLE at Carted, GDE in ML, GSoC Mentor at TensorFlow, Intel Software Innovator, A
 > I found Rishiraj to be a great communicator, an off-the-shelf and creative thinker, and a passionate hard-working individual. His quest for being able to apply ML skills creatively is infectious. I vividly remember how quickly he was able to incorporate an idea I had casually suggested into our competition pipeline notebook. He studied many relevant resources around object detection specific augmentation policies, and resolution discrepancy within no time and applied them in practice. In short, I learned a lot from him and I am even applying some of those learnings in my own projects.
 >
 > Besides being great at ML, he's also a chess player and is just as passionate about it. I wish Rishiraj an amazing career ahead.
+
+<h3 align="left">Conferences:</h3>
+
+- ***[Cloud Study Jam: Machine Learning and AI](https://gdg.community.dev/events/details/google-gdg-cloud-kolkata-presents-cloud-study-jam-machine-learning-and-ai/) by GDG Cloud Kolkata***  
+Saturday, September 24, 2022, 11:00 AM (IST)  
+Institute of Engineering and Management - Salt Lake Sector V Kolkata, 700091
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
