@@ -1,4 +1,4 @@
-[![Hi 👋, I'm Rishiraj Acharya](https://raw.githubusercontent.com/rishiraj/rishiraj/master/cover.png)](https://rishiraj.github.io)
+<h1 align="center">Hi 👋, I'm Rishiraj Acharya</h1>
 <h3 align="center">GSoC 2022 at TensorFlow 👨🏻‍🔬 | Kaggle Competitions Master 🧠 | Dynopii ML Engineer 👨🏻‍💻 | Microsoft, DeepLearning.AI Ambassador ✨</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=rishiraj&label=Profile%20views&color=0e75b6&style=flat" alt="rishiraj" /> </p>
@@ -13,7 +13,7 @@
 
 - 💬 Ask me about **Scikit-Learn, Keras, TensorFlow, XGBoost**
 
-- 📫 How to reach me **heyrishiraj@gmail.com**
+- 📫 How to reach me **[heyrishiraj@gmail.com](mailto:heyrishiraj@gmail.com)**
 
 - ⚡ Fun fact **I'm a national level Chess player, a swimming champion and I can lecture for hours on the outer reaches of space and the craziness of astrophysics.**
 
