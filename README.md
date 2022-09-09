@@ -15,8 +15,6 @@
 
 - 📫 How to reach me **heyrishiraj@gmail.com**
 
-- 📄 Know about my experiences [https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/resume.pdf](https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/resume.pdf)
-
 - ⚡ Fun fact **I'm a national level Chess player, a swimming champion and I can lecture for hours on the outer reaches of space and the craziness of astrophysics.**
 
 <h3 align="left">Connect with me:</h3>
