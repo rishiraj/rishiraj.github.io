@@ -3,6 +3,14 @@
   src: url('https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/Gallient-Regular.woff2') format('woff2');
 }
 
-div {
+h1 {
+  font-family: Gallient;
+}
+
+h2 {
+  font-family: Gallient;
+}
+
+h3 {
   font-family: Gallient;
 }
