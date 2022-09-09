@@ -17,6 +17,17 @@
 
 - ⚡ Fun fact **I'm a national level Chess player, a swimming champion and I can lecture for hours on the outer reaches of space and the craziness of astrophysics.**
 
+<h3 align="left">Recommendations:</h3>
+
+***[Sayak Paul](https://sayak.dev)***  
+MLE at Carted, GDE in ML, GSoC Mentor at TensorFlow, Intel Software Innovator, Author of [Hands-On Python Deep Learning for the Web](https://www.packtpub.com/in/data/hands-on-python-deep-learning-for-web)
+
+> Rishiraj and I worked together for a [Kaggle Competition](https://www.kaggle.com/competitions/tensorflow-great-barrier-reef/overview). I had already known Rishiraj and all his achievements by that time as he is my college junior. But after working together I got to witness how humble and how intelligent Rishiraj is.
+>
+> I found Rishiraj to be a great communicator, an off-the-shelf and creative thinker, and a passionate hard-working individual. His quest for being able to apply ML skills creatively is infectious. I vividly remember how quickly he was able to incorporate an idea I had casually suggested into our competition pipeline notebook. He studied many relevant resources around object detection specific augmentation policies, and resolution discrepancy within no time and applied them in practice. In short, I learned a lot from him and I am even applying some of those learnings in my own projects.
+>
+> Besides being great at ML, he's also a chess player and is just as passionate about it. I wish Rishiraj an amazing career ahead.
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://twitter.com/rishirajacharya" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="rishirajacharya" height="30" width="40" /></a>
