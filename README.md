@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Rishiraj Acharya</h1>
+# [![Hi 👋, I'm Rishiraj Acharya](https://raw.githubusercontent.com/rishiraj/rishiraj/master/cover.png)](https://rishiraj.github.io)
 <h3 align="center">GSoC 2022 at TensorFlow 👨🏻‍🔬 | Kaggle Competitions Master 🧠 | Dynopii ML Engineer 👨🏻‍💻 | Microsoft, DeepLearning.AI Ambassador ✨</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=rishiraj&label=Profile%20views&color=0e75b6&style=flat" alt="rishiraj" /> </p>
