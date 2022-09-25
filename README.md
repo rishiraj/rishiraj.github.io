@@ -41,7 +41,7 @@ MLE at Carted, GDE in ML, GSoC Mentor at TensorFlow, Intel Software Innovator, A
 - ***[Cloud Study Jam: Machine Learning and AI](https://gdg.community.dev/events/details/google-gdg-cloud-kolkata-presents-cloud-study-jam-machine-learning-and-ai/) by GDG Cloud Kolkata***  
 Saturday, September 24, 2022, 11:00 AM (IST)  
 Institute of Engineering and Management - Salt Lake Sector V Kolkata, 700091  
-> <img src="https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/event1.jpeg" width="480"> <img src="https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/event1.jpeg" width="480">
+> ![](https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/event1.jpeg)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
