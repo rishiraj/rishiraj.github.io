@@ -42,6 +42,8 @@ MLE at Carted, GDE in ML, GSoC Mentor at TensorFlow, Intel Software Innovator, A
 Saturday, September 24, 2022, 11:00 AM (IST)  
 Institute of Engineering and Management - Salt Lake Sector V Kolkata, 700091
 
+> [](https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/event1.jpeg)
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://twitter.com/rishirajacharya" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="rishirajacharya" height="30" width="40" /></a>
