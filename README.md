@@ -28,7 +28,7 @@ Worked on Classical ML, NLP, Statistical Algorithm, Computer Vision, Deep Learni
 <h3 align="left">Recommendations:</h3>
 
 ***[Sayak Paul](https://sayak.dev)***  
-MLE at Carted, GDE in ML, GSoC Mentor at TensorFlow, Intel Software Innovator, Author of [Hands-On Python Deep Learning for the Web](https://www.packtpub.com/in/data/hands-on-python-deep-learning-for-web)
+Developer Advocate Engineer at [Hugging Face](https://hf.co/), GDE in ML, GSoC Mentor at TensorFlow, Intel Software Innovator
 
 > Rishiraj and I worked together for a [Kaggle Competition](https://www.kaggle.com/competitions/tensorflow-great-barrier-reef/overview). I had already known Rishiraj and all his achievements by that time as he is my college junior. But after working together I got to witness how humble and how intelligent Rishiraj is.
 >
