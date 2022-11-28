@@ -39,7 +39,7 @@ Developer Advocate Engineer at [Hugging Face](https://hf.co/), GDE in ML, GSoC M
 | <h3>Conferences:</h3> | <h3>Photos</h3> |
 | :---        |    :----:   |
 | ***[Cloud Study Jam: Machine Learning and AI](https://gdg.community.dev/events/details/google-gdg-cloud-kolkata-presents-cloud-study-jam-machine-learning-and-ai/) by GDG Cloud Kolkata***<br><br>Saturday, September 24, 2022, 11:00 AM (IST)<br><br>Institute of Engineering and Management - Salt Lake Sector V, Kolkata, 700091 | ![](https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/event1.jpeg) |
-| ***[Google DevFest Durgapur 2022](https://gdg.community.dev/events/details/google-gdg-durgapur-presents-devfest-durgapur-2022/) by GDG Durgapur***<br><br>Sunday, November 27, 2022, 09:00 AM (IST)<br><br>Srijani Auditorium - City Center, Durgapur, 713216 | ![](https://media-exp1.licdn.com/dms/image/C4D22AQGRGz5bs1f60g/feedshare-shrink_2048_1536/0/1668947006034?e=1672272000&v=beta&t=N8zf8SL06A6k2FmZJiM36a2Z5SJq9rudpAThvk050ic) |
+| ***[Google DevFest Durgapur 2022](https://gdg.community.dev/events/details/google-gdg-durgapur-presents-devfest-durgapur-2022/) by GDG Durgapur***<br><br>Sunday, November 27, 2022, 09:00 AM (IST)<br><br>Srijani Auditorium - City Center, Durgapur, 713216 | ![](https://raw.githubusercontent.com/rishiraj/rishiraj.github.io/main/assets/event2.jpg) |
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
