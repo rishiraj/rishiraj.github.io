@@ -23,6 +23,24 @@
 
     <link rel="stylesheet" href="/assets/css/style.css?v=52a7225ab4ce7a098d79f551092383a2a988e0ad">
     <link rel="stylesheet" href="/assets/font.css">
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Set the aspect ratio (16:9) */
+            height: 0;
+            border-radius: 10px; /* Add rounded corners */
+            overflow: hidden; /* Ensure video stays within rounded container */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
