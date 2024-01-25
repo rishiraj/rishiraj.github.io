@@ -1,6 +1,23 @@
-<iframe
-	src="https://rishiraj-portfolio.hf.space"
-	frameborder="0"
-	width="850"
-	height="450"
-></iframe>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect Page</title>
+    <script type="text/javascript">
+        function redirectIfMobile() {
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location = "https://bit.ly/rishirajhf"; // Replace with your mobile URL
+            }
+        }
+    </script>
+</head>
+<body onload="redirectIfMobile()">
+    <script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/4.15.0/gradio.js"
+></script>
+
+<gradio-app src="https://rishiraj-portfolio.hf.space"></gradio-app>
+
+</body>
+</html>
