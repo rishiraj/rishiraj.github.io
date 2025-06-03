@@ -7,47 +7,100 @@
   }
 
   :root {
-    --primary-color: #007bff;
+    --primary-color: #007AFF; /* Apple's classic blue */
     --primary-hover-color: #0056b3;
-    --text-color: #343a40;
-    --text-muted-color: #6c757d;
-    --heading-color: #212529;
-    --bg-body: #e9ecef;
-    --bg-container-glass: rgba(255, 255, 255, 0.85);
-    --bg-card-glass: rgba(255, 255, 255, 0.75);
-    --border-color-soft: rgba(0, 0, 0, 0.1);
-    --border-color-glass: rgba(255, 255, 255, 0.3);
-    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.1);
-    --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.15);
-    --border-radius-main: 20px;
-    --border-radius-card: 15px;
+    --text-color: #1d1d1f; /* Apple's dark text color */
+    --text-muted-color: #6e6e73; /* Apple's secondary text color */
+    --heading-color: #1d1d1f;
+    
+    /* Backgrounds */
+    --bg-body: #f5f5f7; /* Very light Apple-like grey */
+    --bg-container-glass-base: rgba(255, 255, 255, 0.7); /* Base for glass */
+    --bg-card-glass-base: rgba(255, 255, 255, 0.65);
+
+    /* Borders & Shadows */
+    --border-color-soft: rgba(0, 0, 0, 0.08);
+    --border-color-glass-edge: rgba(255, 255, 255, 0.5); /* Subtle edge highlight */
+    --shadow-glass: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0,0,0,0.05);
+    
+    /* Radii */
+    --border-radius-main: 22px; /* Slightly more rounded, Apple-like */
+    --border-radius-card: 18px;
     --border-radius-button: 8px;
+
+    /* Rainbow Gradient Colors (subtle) */
+    --rainbow-color-1: hsla(190, 80%, 75%, 0.6); /* Light Blue */
+    --rainbow-color-2: hsla(140, 70%, 78%, 0.6); /* Light Green */
+    --rainbow-color-3: hsla(60, 80%, 78%, 0.6);  /* Light Yellow */
+    --rainbow-color-4: hsla(20, 80%, 80%, 0.6);  /* Light Orange/Peach */
+    --rainbow-color-5: hsla(330, 80%, 82%, 0.6); /* Light Pink */
   }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    line-height: 1.7;
+    line-height: 1.65; /* Slightly more open leading */
     color: var(--text-color);
     background-color: var(--bg-body);
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     margin: 0;
-    padding: 10px; /* Base padding for body, container will have more */
+    padding: 10px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-wrap: break-word;
-    word-wrap: break-word; /* Legacy */
+    word-wrap: break-word;
+  }
+
+  /* Base for all glass elements */
+  .glass-effect {
+    position: relative; /* Crucial for pseudo-elements */
+    overflow: hidden;   /* Crucial for clipping pseudo-elements */
+    background-color: var(--bg-container-glass-base);
+    backdrop-filter: blur(20px) saturate(180%); /* Increased blur and saturation */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border-color-glass-edge);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Rainbow highlight pseudo-element for glass */
+  .glass-effect::before {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: -50%; /* Start gradient off-screen to allow it to sweep across */
+    width: 200%; /* Make it wide enough to sweep */
+    height: 70%; /* Adjust height of the rainbow effect area */
+    background-image: linear-gradient(
+      90deg, /* Control angle of the rainbow stripes */
+      transparent,
+      var(--rainbow-color-1) 20%,
+      var(--rainbow-color-2) 40%,
+      var(--rainbow-color-3) 60%,
+      var(--rainbow-color-4) 80%,
+      var(--rainbow-color-5),
+      transparent
+    );
+    opacity: 0.35; /* Make it very subtle */
+    filter: blur(35px); /* Heavy blur for diffusion */
+    z-index: 1; /* Behind content but above main background */
+    pointer-events: none; /* Allow clicks to pass through */
+    border-bottom-left-radius: inherit; /* Match parent's rounding */
+    border-bottom-right-radius: inherit;
+  }
+  
+  /* Content within glass needs to be above the pseudo-element */
+  .glass-effect > * {
+    position: relative;
+    z-index: 2;
   }
 
   .container {
     max-width: 900px;
     margin: 40px auto;
     padding: 35px 45px;
-    background-color: var(--bg-container-glass);
-    backdrop-filter: blur(12px) saturate(150%);
-    -webkit-backdrop-filter: blur(12px) saturate(150%);
     border-radius: var(--border-radius-main);
-    box-shadow: var(--shadow-strong);
-    border: 1px solid var(--border-color-glass);
+    /* Inherits .glass-effect styles */
+  }
+  .container.consultation-container { /* Specific class for consultation if different size needed */
+    max-width: 850px;
   }
 
   h1, h2, h3, h4 {
@@ -56,13 +109,13 @@
     line-height: 1.3;
   }
   
-  h1 { font-size: 2.8em; margin-bottom: 0.3em; }
-  h2 { font-size: 2.0em; margin-top: 2em; margin-bottom: 1em; border-bottom: 1px solid var(--border-color-soft); padding-bottom: 0.5em; }
-  h3 { font-size: 1.6em; margin-top: 1.8em; margin-bottom: 0.7em; color: #2c3e50; }
-  h4 { font-size: 1.25em; margin-top: 1.5em; margin-bottom: 0.5em; color: #34495e; }
+  h1 { font-size: 2.6em; margin-bottom: 0.3em; } /* Slightly reduced default H1 */
+  h2 { font-size: 1.9em; margin-top: 2em; margin-bottom: 1em; border-bottom: 1px solid var(--border-color-soft); padding-bottom: 0.5em; }
+  h3 { font-size: 1.5em; margin-top: 1.8em; margin-bottom: 0.7em; color: #2c3e50; }
+  h4 { font-size: 1.2em; margin-top: 1.5em; margin-bottom: 0.5em; color: #34495e; }
 
   p, li {
-    font-size: 1.05em;
+    font-size: 1.02em; /* Slightly smaller base paragraph text */
     color: var(--text-color);
     margin-bottom: 0.8em;
   }
@@ -70,12 +123,12 @@
   a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
     font-weight: 500;
   }
   a:hover {
     color: var(--primary-hover-color);
-    text-decoration: none;
+    opacity: 0.85;
   }
 
   .profile-header {
@@ -83,17 +136,18 @@
     margin-bottom: 40px;
   }
   .profile-header img {
-    border: 5px solid var(--border-color-glass);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 160px; /* Keep initial size */
+    border: 3px solid rgba(255,255,255,0.7); /* Lighter border for profile pic */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 160px;
     border-radius: 50%;
   }
   .profile-header h1 {
     margin-top: 0.5em;
     margin-bottom: 0.1em;
+    font-size: 2.8em; /* Restore profile header H1 size */
   }
   .profile-header b {
-    font-size: 1.15em;
+    font-size: 1.1em;
     color: var(--text-muted-color);
     display: block;
     margin-top: 5px;
@@ -114,39 +168,39 @@
     color: #ffffff !important;
     padding: 12px 24px;
     border-radius: var(--border-radius-button);
-    font-weight: bold;
+    font-weight: 600; /* Apple often uses semi-bold for buttons */
     text-decoration: none;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); /* Softer button shadow */
     border: none;
     margin: 8px 8px 8px 0;
   }
   .button-link:hover {
     background-color: var(--primary-hover-color);
     text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(0, 123, 255, 0.3);
   }
   .button-link.large {
-    padding: 15px 30px;
-    font-size: 1.1em;
+    padding: 14px 28px;
+    font-size: 1.05em;
   }
 
   .styled-box, .career-item, .project-highlight, .terms-section .term-item {
-    background-color: var(--bg-card-glass);
-    backdrop-filter: blur(8px) saturate(120%);
-    -webkit-backdrop-filter: blur(8px) saturate(120%);
     padding: 25px;
     border-radius: var(--border-radius-card);
     margin-bottom: 25px;
-    border: 1px solid var(--border-color-glass);
-    box-shadow: var(--shadow-soft);
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    background-color: var(--bg-card-glass-base); /* Specific base for cards */
+    /* Inherits .glass-effect styles */
+  }
+  .terms-section .term-item {
+    padding: 20px 25px; /* Slightly different padding for term items */
   }
 
-  .career-item h4, .project-highlight h4 { margin-top: 0; font-size: 1.4em; }
+
+  .career-item h4, .project-highlight h4 { margin-top: 0; font-size: 1.3em; }
   .career-item p.meta {
-    font-size: 0.9em;
+    font-size: 0.88em;
     color: var(--text-muted-color);
     margin-bottom: 12px;
     font-style: italic;
@@ -162,73 +216,68 @@
     margin-bottom: 0.6em;
   }
   ul li::before {
-    content: "❖";
+    content: "•"; /* Simple dot, Apple-like */
     position: absolute;
-    left: 0;
+    left: 0.5em; /* Adjust for dot */
     color: var(--primary-color);
     font-weight: bold;
-    font-size: 1.1em;
-    top: -1px;
+    font-size: 1em;
+    top: 0.1em;
   }
   
   .tech-toolbox { padding: 10px 0; }
   .tech-toolbox ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px; /* Slightly smaller gap */
     padding-left: 0;
     margin-top: 10px;
   }
   .tech-toolbox li {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: rgba(0, 123, 255, 0.08); /* Even lighter for pills */
     color: var(--primary-color);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.9em;
+    padding: 7px 14px;
+    border-radius: 15px; /* More rounded pills */
+    font-size: 0.88em;
     font-weight: 500;
     list-style-type: none;
-    border: 1px solid rgba(0, 123, 255, 0.2);
+    border: 1px solid rgba(0, 123, 255, 0.15);
   }
   .tech-toolbox li::before { content: ""; }
   
   .tech-category-title {
-    font-weight: bold;
+    font-weight: 600; /* Semi-bold */
     color: var(--heading-color);
     margin-top: 15px;
     margin-bottom: 8px;
     display: block;
-    font-size: 1.05em;
+    font-size: 1em;
   }
 
-  .achievements-list li::before { content: "🏆"; left: -2px; font-size: 1.2em; top: -2px;}
-  .community-list li::before { content: "🌍"; left: -2px; font-size: 1.2em; top: -2px;}
-  .contact-list li { padding-left: 2.5em; }
+  .achievements-list li::before { content: "🏆"; left: 0px; font-size: 1.1em; top: -1px;}
+  .community-list li::before { content: "🌍"; left: 0px; font-size: 1.1em; top: -1px;}
+  .contact-list li { padding-left: 2.2em; }
   .contact-list li::before { content: ""; }
-  .contact-list .icon { margin-right: 10px; font-size: 1.3em; vertical-align: middle; color: var(--primary-color); }
+  .contact-list .icon { margin-right: 8px; font-size: 1.2em; vertical-align: middle; color: var(--primary-color); }
 
   .footer-quote {
     text-align: center;
     font-style: italic;
     color: var(--text-muted-color);
     margin-top: 50px;
-    font-size: 1.1em;
+    font-size: 1.05em;
     padding-top: 20px;
     border-top: 1px solid var(--border-color-soft);
   }
 
   .consultation-title {
     text-align: center;
+    font-size: 2.6em; /* Match H1 */
     margin-bottom: 30px !important;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border-color-soft);
   }
 
-  .terms-section .term-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 25px;
-  }
   .terms-section .term-item strong {
     color: var(--heading-color);
     font-weight: 600;
@@ -236,7 +285,7 @@
   .terms-section .term-item span {
     font-weight: 600;
     color: var(--primary-color);
-    font-size: 1.05em;
+    font-size: 1.02em;
   }
 
   .pros-cons-list {
@@ -244,15 +293,15 @@
     padding-left: 0;
   }
   .pros-cons-list li {
-    padding-left: 2.5em;
+    padding-left: 2.2em;
     margin-bottom: 1em;
-    font-size: 1.05em;
+    font-size: 1.02em;
   }
   .pros-cons-list li::before {
     position: absolute;
     left: 0;
-    font-size: 1.4em;
-    top: -3px;
+    font-size: 1.3em;
+    top: -2px;
   }
   .pros-cons-list.dont-get li::before { content: "🚫"; }
   .pros-cons-list.do-get li::before { content: "✅"; }
@@ -263,25 +312,25 @@
     margin-bottom: 10px;
   }
   .pros-cons-list ul li, ul ul li {
-    font-size: 0.95em;
+    font-size: 0.92em;
   }
   .pros-cons-list ul li::before, ul ul li::before {
-    content: "›";
-    color: var(--primary-color);
+    content: "–"; /* Em dash for nested, simpler */
+    color: var(--text-muted-color);
     font-weight: bold;
     font-size: 1em;
-    left: -1.2em;
+    left: -0.2em; 
     top: 0;
   }
   
   blockquote {
-    border-left: 5px solid var(--primary-color);
-    padding: 15px 25px;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
     margin-left: 0;
     margin-right: 0;
     font-style: italic;
     color: var(--text-muted-color);
-    background-color: rgba(0, 123, 255, 0.05);
+    background-color: rgba(230, 242, 255, 0.5); /* Very light blue tint */
     border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
   }
   blockquote p {
@@ -291,11 +340,11 @@
 
   .gsoc-header-image {
     width: 100%;
-    max-width: 700px;
+    max-width: 650px; /* Slightly smaller max */
     display: block;
     margin: 0 auto 30px auto;
     border-radius: var(--border-radius-card);
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--shadow-glass); /* Use glass shadow */
   }
   .gsoc-page-title {
     text-align: center;
@@ -310,17 +359,19 @@
     color: var(--text-muted-color);
     margin-top: 0.5em;
     margin-bottom: 2em;
-    font-size: 1.1em;
+    font-size: 1.05em;
     line-height: 1.4;
   }
   .gsoc-contributions-list li::before {
-    content: "✔";
-    color: #28a745;
+    content: "✓"; /* SF Symbol like check */
+    color: #34C759; /* Apple Green */
     top: 0;
+    left: 0.4em;
   }
   .gsoc-merged-prs-list li::before {
     content: "🔗";
     top: 0;
+    left: 0.4em;
   }
 
   img {
@@ -338,132 +389,55 @@
   }
 
   /* --- Responsive Adjustments --- */
-
-  @media (max-width: 992px) { /* Medium devices (tablets, less than 992px) */
-    .container {
-      padding: 30px 30px; /* Adjusted for symmetry */
-      margin: 30px auto;
-    }
-    .consultation-container { /* If consultation page needs slightly different width */
-        max-width: 800px;
-    }
+  @media (max-width: 992px) {
+    .container { padding: 30px; margin: 30px auto; }
+    .container.consultation-container { max-width: 800px; }
   }
 
-  @media (max-width: 768px) { /* Small devices (landscape phones, 768px and down) */
-    body {
-      padding: 5px; /* Less body padding on small screens */
-    }
-    .container {
-      margin: 20px auto;
-      padding: 25px 20px; /* Reduced padding for smaller screens */
-    }
-    h1, .profile-header h1, .consultation-title, .gsoc-page-title {
-      font-size: 2.2em; 
-    }
-    h2 {
-      font-size: 1.7em; 
-    }
-    h3 {
-      font-size: 1.4em;
-    }
-    h4 {
-      font-size: 1.15em;
-    }
-    p, li {
-      font-size: 1em; 
-    }
-    .button-link {
-      padding: 10px 18px;
-      font-size: 0.95em;
-    }
-    .button-link.large {
-      padding: 12px 22px;
-      font-size: 1em;
-    }
-    .tech-toolbox ul {
-      gap: 8px; 
-    }
-    .tech-toolbox li {
-      padding: 6px 12px;
-      font-size: 0.85em;
-    }
-    .profile-header img {
-      width: 120px; 
-    }
-    .profile-header b {
-      font-size: 1.05em;
-    }
-    .gsoc-subtitle {
-      font-size: 1em;
-    }
-    .section-divider {
-        margin: 40px 0;
-    }
+  @media (max-width: 768px) {
+    body { padding: 5px; }
+    .container { margin: 20px auto; padding: 25px 20px; }
+    h1, .profile-header h1, .consultation-title, .gsoc-page-title { font-size: 2.1em; }
+    .profile-header h1 {font-size: 2.3em;} /* Keep profile H1 a bit larger */
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.35em; }
+    h4 { font-size: 1.1em; }
+    p, li { font-size: 0.98em; }
+    .button-link { padding: 10px 20px; font-size: 0.92em; }
+    .button-link.large { padding: 12px 22px; font-size: 0.98em; }
+    .tech-toolbox ul { gap: 8px; }
+    .tech-toolbox li { padding: 6px 12px; font-size: 0.82em; }
+    .profile-header img { width: 120px; }
+    .profile-header b { font-size: 1em; }
+    .gsoc-subtitle { font-size: 1em; }
+    .section-divider { margin: 40px 0; }
+    .glass-effect::before { height: 60%; filter: blur(30px); opacity: 0.3; }
   }
 
-  @media (max-width: 576px) { /* Extra small devices (portrait phones, less than 576px) */
-    .container {
-      padding: 20px 15px; 
-      margin: 15px auto;
-      border-radius: 15px; 
-    }
-    h1, .profile-header h1, .consultation-title, .gsoc-page-title {
-      font-size: 1.9em; /* Even smaller h1, adjusted from 1.8 */
-    }
-    h2 {
-      font-size: 1.5em;
-    }
-    h3 {
-      font-size: 1.3em;
-    }
-    p, li {
-      font-size: 0.95em;
-    }
-    .profile-header img {
-      width: 100px;
-    }
-    .profile-header b {
-      font-size: 0.95em;
-    }
-    .contact-list li {
-      padding-left: 2.2em; /* Adjust for smaller icons/text */
-    }
-    .contact-list .icon {
-      font-size: 1.2em;
-    }
-    .gsoc-subtitle {
-      font-size: 0.9em;
-    }
-    .terms-section .term-item {
-      padding: 15px 15px; /* Smaller padding in term items */
-      flex-direction: column; /* Stack term items on very small screens */
-      align-items: flex-start;
-      text-align: left;
-    }
-    .terms-section .term-item strong {
-      margin-bottom: 5px;
-    }
-    .terms-section .term-item span {
-        font-size: 1em; /* Ensure rate is readable */
-    }
-    .footer-quote {
-      font-size: 1em;
-      margin-top: 40px;
-      padding-top: 15px;
-    }
-    .button-link, .button-link.large { /* Make buttons take more width if needed, or just ensure they wrap nicely */
-        display: block; /* Make buttons stack on smallest screens */
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .profile-header {
-        margin-bottom: 30px;
-    }
+  @media (max-width: 576px) {
+    .container { padding: 20px 15px; margin: 15px auto; border-radius: 18px; }
+    h1, .profile-header h1, .consultation-title, .gsoc-page-title { font-size: 1.8em; }
+    .profile-header h1 {font-size: 2em;} /* Keep profile H1 a bit larger */
+    h2 { font-size: 1.45em; }
+    h3 { font-size: 1.25em; }
+    p, li { font-size: 0.92em; }
+    .profile-header img { width: 100px; }
+    .profile-header b { font-size: 0.9em; }
+    .contact-list li { padding-left: 2em; }
+    .contact-list .icon { font-size: 1.1em; }
+    .gsoc-subtitle { font-size: 0.9em; }
+    .terms-section .term-item { padding: 15px; flex-direction: column; align-items: flex-start; text-align: left; }
+    .terms-section .term-item strong { margin-bottom: 5px; }
+    .terms-section .term-item span { font-size: 0.98em; }
+    .footer-quote { font-size: 0.95em; margin-top: 40px; padding-top: 15px; }
+    .button-link, .button-link.large { display: block; text-align: center; margin-left: 0; margin-right: 0; }
+    .profile-header { margin-bottom: 30px; }
+    .glass-effect::before { height: 50%; filter: blur(25px); opacity: 0.25; }
+    ul li::before {left: 0.4em;}
   }
 </style>
 
-<div class="container">
+<div class="container glass-effect">
   <h1 class="consultation-title">AI Consulting by Rishiraj</h1>
   <p style="text-align: center; font-size: 1.15em; color: #2d3748; margin-top: -15px; margin-bottom: 30px;">
     I offer premium AI consulting services tailored to clients who need focused, high-impact support in developing, scaling, or refining their AI/ML systems — especially in Natural Language Processing, Speech Technologies, and AI for Medicine.
