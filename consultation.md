@@ -489,15 +489,29 @@
         <ul>
           <li>Natural Language Processing (NLP)</li>
           <li>Speech & Audio AI + Medical AI systems</li>
-          <li>End-to-end ML pipeline design</li>
           <li>Scalable cloud-based ML deployment (GCP, AWS)</li>
-          <li>Kaggle-style rapid experimentation and prototyping</li>
         </ul>
       </li>
       <li>High-quality, maintainable code and models</li>
       <li>Research-backed methods and optimization</li>
       <li>Integration with Hugging Face and GCP ecosystems</li>
     </ul>
+  </section>
+
+  <hr class="section-divider">
+
+  <section>
+    <h2><span class="icon">🎤</span> Speaking Engagements & Workshops</h2>
+    <p>I'm passionate about sharing knowledge and frequently deliver talks and workshops on AI/ML, with a special focus on Natural Language Processing, Speech AI, Medical AI, and practical MLOps.</p>
+    
+    <h3><span class="icon">🌍</span> Community & Non-Profit Events</h3>
+    <p>For non-profit initiatives such as community meetups, university guest lectures, or educational seminars, I offer my speaking services free of charge. As a Google Developer Expert (GDE), my travel and accommodation for these events are often covered by Google.</p>
+
+    <h3><span class="icon">💼</span> Corporate & For-Profit Events</h3>
+    <p>A speaking fee applies for corporate events, conferences, or any engagement that is commercial or profit-oriented. Please <a href="mailto:heyrishiraj@gmail.com">contact me</a> with your event details to discuss my rates and availability.</p>
+
+    <h3><span class="icon">🚫</span> A Note on Event Themes</h3>
+    <p>I typically decline invitations to speak at or judge events/hackathons that are primarily sponsored by, or heavily centered around, cryptocurrency, blockchain and speculative Web3 ventures.</p>
   </section>
 
   <hr class="section-divider">
