@@ -325,10 +325,9 @@
       <li>Expert-level guidance and hands-on development in:
         <ul>
           <li>Natural Language Processing (NLP)</li>
-          <li>Speech & Audio AI</li>
-          <li>Medical AI systems</li>
+          <li>Speech & Audio AI + Medical AI systems</li>
           <li>End-to-end ML pipeline design</li>
-          <li>Scalable cloud-based ML deployment (GCP preferred)</li>
+          <li>Scalable cloud-based ML deployment (GCP, AWS)</li>
           <li>Kaggle-style rapid experimentation and prototyping</li>
         </ul>
       </li>
