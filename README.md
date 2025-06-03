@@ -171,8 +171,8 @@
     <p>I'm a Machine Learning Engineer currently leading AI development at <strong>IntelliTek</strong>, where I focus on using <strong>Generative AI</strong> to enhance the healthcare domain — automating clinical workflows like SOAP note generation, extracting structured data from unstructured conversations, and ensuring HIPAA-compliant ML pipelines.</p>
     <p>As a <strong>triple Google Developer Expert</strong> in <strong>Machine Learning</strong>, <strong>Cloud</strong>, and <strong>Kaggle</strong>, I bring both depth and breadth to real-world AI systems. My work sits at the intersection of <strong>NLP</strong>, <strong>Speech Technologies</strong>, and <strong>Medical AI</strong>.</p>
     <p>
-      <a href="consultation.md" class="button-link">👉 Consulting? Here’s how I work</a>
-      <a href="gsoc2022.md" class="button-link">🛠️ My GSoC 2022 contributions at TensorFlow</a>
+      <a href="/consultation" class="button-link">👉 Consulting? Here’s how I work</a>
+      <a href="/gsoc2022" class="button-link">🛠️ My GSoC project at TensorFlow</a>
     </p>
   </section>
 
@@ -267,10 +267,6 @@
     <span class="tech-category-title">Deployment:</span>
     <ul>
       <li>GCP</li><li>AWS</li><li>FastAPI</li><li>Redis</li><li>TensorRT</li><li>Docker</li>
-    </ul>
-    <span class="tech-category-title">Languages:</span>
-    <ul>
-      <li>Python</li><li>Mojo</li>
     </ul>
     <span class="tech-category-title">Tools:</span>
     <ul>
