@@ -6,133 +6,151 @@
     font-display: swap;
   }
 
+  :root {
+    --primary-color: #007bff; /* A vibrant blue for links and accents */
+    --primary-hover-color: #0056b3;
+    --text-color: #343a40;
+    --text-muted-color: #6c757d;
+    --heading-color: #212529;
+    --bg-body: #e9ecef; /* Light gray, can be a subtle gradient or image */
+    --bg-container-glass: rgba(255, 255, 255, 0.85); /* Main glass effect */
+    --bg-card-glass: rgba(255, 255, 255, 0.75); /* Slightly more transparent for cards */
+    --border-color-soft: rgba(0, 0, 0, 0.1);
+    --border-color-glass: rgba(255, 255, 255, 0.3);
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.15);
+    --border-radius-main: 20px;
+    --border-radius-card: 15px;
+    --border-radius-button: 8px;
+  }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9fafb; /* Light gray background */
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-body);
+    /* Optional: Add a subtle gradient or image for better glass effect */
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     margin: 0;
-    padding: 0;
+    padding: 20px; /* Give some space around the container */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .container {
     max-width: 850px; /* Adjusted slightly for content, can be 900px or 800px too */
-    margin: 20px auto;
-    padding: 25px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    padding: 35px 45px;
+    background-color: var(--bg-container-glass);
+    backdrop-filter: blur(12px) saturate(150%); /* Saturate enhances colors "through" the glass */
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--shadow-strong);
+    border: 1px solid var(--border-color-glass);
   }
 
   h1, h2, h3, h4 {
     font-family: 'Gallient', serif;
-    color: #1a202c; /* Darker heading color */
+    color: var(--heading-color);
+    line-height: 1.3;
   }
   
   h1 { 
     font-size: 2.8em; 
-    margin-bottom: 0.2em; 
+    margin-bottom: 0.3em; 
   }
   /* Specific H1 styling for consultation page title */
   .consultation-title {
     text-align: center;
-    margin-bottom: 25px !important; /* Overriding generic h1 margin */
-    padding-bottom: 15px;
-    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 30px !important; /* Overriding generic h1 margin */
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color-soft);
   }
 
   h2 { 
     font-size: 2.0em; 
-    margin-top: 1.8em; 
-    margin-bottom: 0.8em; 
-    border-bottom: 2px solid #e2e8f0; 
-    padding-bottom: 0.4em; 
+    margin-top: 2em; 
+    margin-bottom: 1em; 
+    border-bottom: 1px solid var(--border-color-soft); 
+    padding-bottom: 0.5em; 
   }
   h3 { 
     font-size: 1.6em; 
-    margin-top: 1.5em; 
-    margin-bottom: 0.6em; 
-    color: #2d3748; 
+    margin-top: 1.8em; 
+    margin-bottom: 0.7em; 
+    color: #2c3e50; 
   }
   h4 { 
-    font-size: 1.2em; 
-    margin-top: 1.2em; 
-    margin-bottom: 0.4em; 
-    color: #4a5568; 
+    font-size: 1.25em; 
+    margin-top: 1.5em; 
+    margin-bottom: 0.5em; 
+    color: #34495e; 
   }
 
   p, li {
     font-size: 1.05em;
-    color: #4a5568; /* Slightly lighter text color */
+    color: var(--text-color);
+    margin-bottom: 0.8em;
   }
 
   a {
-    color: #4299e1; /* Blue link color from readme */
+    color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    font-weight: 500;
   }
   a:hover {
-    color: #2b6cb0; /* Darker blue on hover from readme */
-    text-decoration: underline;
-  }
-
-  .profile-header { /* Kept for potential future use, not directly used here */
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .profile-header img {
-    border: 4px solid #e2e8f0; /* Light border around image */
-  }
-  .profile-header b {
-    font-size: 1.2em;
-    color: #2d3748;
-    display: block;
-    margin-top: 10px;
+    color: var(--primary-hover-color);
+    text-decoration: none;
   }
 
   .section-divider {
     border: 0;
     height: 1px;
-    background: #e2e8f0;
-    margin: 40px 0;
+    background: var(--border-color-soft);
+    margin: 50px 0;
   }
 
-  .button-link { /* This is the primary button style from readme.md */
+  .button-link {
     display: inline-block;
-    background-color: #4299e1;
-    color: #ffffff !important; /* Important to override default link color */
-    padding: 10px 18px;
-    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-button);
     font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
-    margin: 5px 5px 5px 0;
-    font-size: 1.0em; /* Base font size for buttons */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    border: none;
+    margin: 8px 8px 8px 0;
+    font-size: 1.0em;
   }
   .button-link:hover {
-    background-color: #2b6cb0;
+    background-color: var(--primary-hover-color);
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
   }
-  /* Larger button variant if needed */
   .button-link.large {
-    padding: 12px 25px;
+    padding: 15px 30px;
     font-size: 1.1em;
   }
 
-
-  .career-item, .project-highlight, .styled-box { /* Generic styled box */
-    background-color: #f7fafc; /* Very light gray for cards */
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  /* Unified card style */
+  .styled-box, .career-item, .project-highlight, .terms-section .term-item {
+    background-color: var(--bg-card-glass);
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    padding: 25px;
+    border-radius: var(--border-radius-card);
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color-glass);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
   }
-  .career-item h4 { margin-top: 0; } /* Specific to career-item */
-  .career-item p.meta { /* Specific to career-item */
-    font-size: 0.9em;
-    color: #718096; /* Gray for meta info */
-    margin-bottom: 10px;
+   .styled-box:hover, .career-item:hover, .project-highlight:hover {
+    /* transform: translateY(-3px); */
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.08); */
   }
   
   ul {
@@ -140,137 +158,133 @@
     padding-left: 0;
   }
   ul li {
-    padding-left: 1.5em;
+    padding-left: 1.8em;
     position: relative;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.6em;
   }
   ul li::before {
-    content: "›"; /* Custom bullet from readme */
+    content: "❖"; 
     position: absolute;
     left: 0;
-    color: #4299e1; /* Bullet color from readme */
+    color: var(--primary-color);
     font-weight: bold;
+    font-size: 1.1em;
+    top: -1px;
   }
   
-  .tech-toolbox ul { /* Kept for potential future use, not directly used here */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding-left: 0;
-  }
-  .tech-toolbox li {
-    background-color: #e2e8f0;
-    color: #2d3748;
-    padding: 6px 12px;
-    border-radius: 15px; /* Pill shape */
-    font-size: 0.9em;
-    list-style-type: none; /* Remove default bullet */
-  }
-  .tech-toolbox li::before { content: ""; } /* Remove custom bullet for these */
-  
-  .tech-category-title { /* Kept for potential future use */
-    font-weight: bold;
-    color: #2d3748;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    display: block; /* Make it take full width before tags */
-  }
-
-  /* Specific list styles from readme.md that might be useful */
-  .achievements-list li::before { content: "🏆"; left: -5px; font-size: 1.1em; }
-  .community-list li::before { content: "🌍"; left: -5px; font-size: 1.1em; }
-  .contact-list li { padding-left: 2em; } /* More space for emoji icons */
-  .contact-list li::before { content: ""; } /* Remove default bullet */
-  .contact-list .icon { margin-right: 8px; font-size: 1.2em; }
-
-  .footer-quote { /* From readme.md */
+  .footer-quote {
     text-align: center;
     font-style: italic;
-    color: #718096;
-    margin-top: 40px;
+    color: var(--text-muted-color);
+    margin-top: 50px;
     font-size: 1.1em;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color-soft);
   }
 
-  /* Styles specific to consultation.md, now integrated */
+  /* ===== CONSULTATION PAGE SPECIFIC (but generally useful) ===== */
   .terms-section .term-item {
-    background-color: #f7fafc; /* Consistent with .career-item */
-    border: 1px solid #e2e8f0; /* Consistent */
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 18px 25px;
   }
   .terms-section .term-item strong {
-    color: #2d3748;
+    color: var(--heading-color);
+    font-weight: 600;
   }
   .terms-section .term-item span {
-    font-weight: 500;
-    color: #4299e1; /* Using readme link color */
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.05em;
   }
 
   .pros-cons-list {
     list-style-type: none;
-    padding-left: 0; /* Base ul already has this */
+    padding-left: 0;
   }
   .pros-cons-list li {
-    padding-left: 2.2em; /* Specific padding for these emoji bullets */
-    position: relative;
-    margin-bottom: 0.8em;
-    font-size: 1.05em; /* Consistent with p, li */
+    padding-left: 2.5em;
+    margin-bottom: 1em;
+    font-size: 1.05em;
   }
-  .pros-cons-list li::before { /* Base styles for emoji bullets */
+  .pros-cons-list li::before {
     position: absolute;
     left: 0;
-    font-size: 1.2em;
-    top: -2px; /* Adjust vertical alignment if needed */
+    font-size: 1.4em;
+    top: -3px;
   }
-  .pros-cons-list.dont-get li::before {
-    content: "🚫"; /* No/Cross emoji */
+  .pros-cons-list.dont-get li::before { content: "🚫"; }
+  .pros-cons-list.do-get li::before { content: "✅"; }
+  
+  .pros-cons-list ul, ul ul {
+    padding-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
-  .pros-cons-list.do-get li::before {
-    content: "✅"; /* Checkmark emoji */
+  .pros-cons-list ul li, ul ul li {
+    font-size: 0.95em;
   }
-  /* Nested list styling within pros-cons-list */
-  .pros-cons-list ul {
-    list-style-type: disc; /* Or keep custom › if preferred */
-    padding-left: 25px; /* Indent nested list */
-    margin-top: 8px;
-  }
-  .pros-cons-list ul li::before {
-    content: "›"; /* Or use standard disc/circle by removing this for nested */
-    color: #4299e1;
+  .pros-cons-list ul li::before, ul ul li::before {
+    content: "›"; 
+    color: var(--primary-color);
     font-weight: bold;
-    font-size: 1em; /* Adjust if needed */
-    left: -1.2em; /* Adjust positioning for nested bullets */
+    font-size: 1em;
+    left: -1.2em;
+    top: 0;
   }
-  /* If you prefer standard bullets for nested lists: */
-  /*
-  .pros-cons-list ul li::before {
-    content: ""; 
-  }
-  .pros-cons-list ul li {
-    padding-left: 0; 
-  }
-  */
-
-
+  
   blockquote {
-    border-left: 4px solid #4299e1; /* Using readme link color for accent */
-    padding-left: 20px;
+    border-left: 5px solid var(--primary-color);
+    padding: 15px 25px;
     margin-left: 0;
     margin-right: 0;
     font-style: italic;
-    color: #4a5568;
-    background-color: #f0f5ff; /* Lighter blue background for quote */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 0 8px 8px 0; /* Rounded on right side */
+    color: var(--text-muted-color);
+    background-color: rgba(0, 123, 255, 0.05);
+    border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
   }
   blockquote p {
     margin-bottom: 0;
+    color: var(--text-color);
   }
+
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-button);
+  }
+
+  /* Heading icons */
+  h2 .icon, h3 .icon, h4 .icon {
+    font-size: 0.8em;
+    vertical-align: middle;
+    margin-right: 10px;
+    display: inline-block;
+    color: var(--primary-color);
+  }
+  
+  /* Styles for GSoC page, kept for completeness but less relevant here */
+  .gsoc-header-image { width: 100%; max-width: 700px; display: block; margin: 0 auto 30px auto; border-radius: var(--border-radius-card); box-shadow: var(--shadow-soft); }
+  .gsoc-page-title { text-align: center; font-size: 2.4em; margin-bottom: 0.1em; }
+  .gsoc-subtitle { text-align: center; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 500; color: var(--text-muted-color); margin-top: 0.5em; margin-bottom: 2em; font-size: 1.1em; }
+  .gsoc-contributions-list li::before { content: "✔"; color: #28a745; }
+  .gsoc-merged-prs-list li::before { content: "🔗"; }
+  .tech-toolbox { padding: 10px 0; } 
+  .tech-toolbox ul { display: flex; flex-wrap: wrap; gap: 12px; padding-left: 0; margin-top: 10px; }
+  .tech-toolbox li { background-color: rgba(0, 123, 255, 0.1); color: var(--primary-color); padding: 8px 15px; border-radius: 20px; font-size: 0.9em; font-weight: 500; list-style-type: none; border: 1px solid rgba(0, 123, 255, 0.2); }
+  .tech-toolbox li::before { content: ""; }
+  .tech-category-title { font-weight: bold; color: var(--heading-color); margin-top: 15px; margin-bottom: 8px; display: block; font-size: 1.05em; }
+  .achievements-list li::before { content: "🏆"; left: -2px; font-size: 1.2em; top: -2px;}
+  .community-list li::before { content: "🌍"; left: -2px; font-size: 1.2em; top: -2px;}
+  .contact-list li { padding-left: 2.5em; }
+  .contact-list li::before { content: ""; } 
+  .contact-list .icon { margin-right: 10px; font-size: 1.3em; vertical-align: middle; color: var(--primary-color); }
+  .profile-header { text-align: center; margin-bottom: 40px; }
+  .profile-header img { border: 5px solid var(--border-color-glass); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  .profile-header h1 { margin-top: 0.5em; margin-bottom: 0.1em; }
+  .profile-header b { font-size: 1.15em; color: var(--text-muted-color); display: block; margin-top: 5px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-weight: 500; }
 
 </style>
 
@@ -283,7 +297,7 @@
   <hr class="section-divider">
 
   <section class="terms-section">
-    <h2><span style="font-size: 0.8em; vertical-align: middle; margin-right: 8px;">💼</span> Consulting Terms</h2>
+    <h2><span class="icon">💼</span> Consulting Terms</h2>
     <div class="term-item"><strong>Monthly Rate:</strong> <span>₹2,00,000 INR</span></div>
     <div class="term-item"><strong>Availability:</strong> <span>5 days a week (Monday–Friday)</span></div>
     <div class="term-item"><strong>Hours per Day:</strong> <span>5 hours</span></div>
@@ -294,7 +308,7 @@
   <hr class="section-divider">
 
   <section>
-    <h2><span style="font-size: 0.8em; vertical-align: middle; margin-right: 8px;">🚫</span> What You <em>Don’t</em> Get</h2>
+    <h2><span class="icon">🚫</span> What You <em>Don’t</em> Get</h2>
     <ul class="pros-cons-list dont-get">
       <li>No random or recurring sync calls</li>
       <li>No daily stand-ups or updates</li>
@@ -306,10 +320,9 @@
   <hr class="section-divider">
 
   <section>
-    <h2><span style="font-size: 0.8em; vertical-align: middle; margin-right: 8px;">🧠</span> What You <em>Do</em> Get</h2>
+    <h2><span class="icon">🧠</span> What You <em>Do</em> Get</h2>
     <ul class="pros-cons-list do-get">
       <li>Expert-level guidance and hands-on development in:
-        <!-- Using a nested ul. Adjusted styling for nested list bullets -->
         <ul>
           <li>Natural Language Processing (NLP)</li>
           <li>Speech & Audio AI</li>
@@ -328,7 +341,7 @@
   <hr class="section-divider">
 
   <section style="text-align: center;">
-    <h2><span style="font-size: 0.8em; vertical-align: middle; margin-right: 8px;">💬</span> Contact</h2>
+    <h2><span class="icon">💬</span> Contact</h2>
     <p>To discuss your project or explore a consulting engagement, get in touch with a brief outline of your needs.</p>
     <a href="mailto:heyrishiraj@gmail.com" class="button-link large">Get in Touch</a>
     <blockquote style="margin-top: 25px; text-align: left;">
@@ -336,7 +349,6 @@
     </blockquote>
   </section>
 
-  <!-- Optional: Add a footer quote similar to readme.md -->
   <hr class="section-divider">
   <p class="footer-quote">
     <i>Empowering your projects with cutting-edge AI expertise.</i>
