@@ -461,11 +461,11 @@
 
   <section class="terms-section">
     <h2><span class="icon">💼</span> Consulting Terms</h2>
-    <div class="term-item"><strong>Monthly Rate:</strong> <span>₹2,00,000 INR</span></div>
+    <div class="term-item"><strong>Monthly Rate:</strong> <span>₹4,00,000 INR</span></div>
     <div class="term-item"><strong>Availability:</strong> <span>5 days a week (Monday–Friday)</span></div>
     <div class="term-item"><strong>Hours per Day:</strong> <span>5 hours</span></div>
     <div class="term-item"><strong>Total Monthly Hours:</strong> <span>100 hours</span></div>
-    <div class="term-item"><strong>Effective Hourly Rate:</strong> <span>₹2,000 INR/hour</span></div>
+    <div class="term-item"><strong>Effective Hourly Rate:</strong> <span>₹4,000 INR/hour</span></div>
   </section>
 
   <hr class="section-divider">
@@ -509,9 +509,6 @@
 
     <h3><span class="icon">💼</span> Corporate & For-Profit Events</h3>
     <p>A speaking fee applies for corporate events, conferences, or any engagement that is commercial or profit-oriented. Please <a href="mailto:heyrishiraj@gmail.com">contact me</a> with your event details to discuss my rates and availability.</p>
-
-    <h3><span class="icon">🚫</span> A Note on Event Themes</h3>
-    <p>I typically decline invitations to speak at or judge events/hackathons that are primarily sponsored by, or heavily centered around, cryptocurrency, blockchain and speculative Web3 ventures.</p>
   </section>
 
   <hr class="section-divider">
