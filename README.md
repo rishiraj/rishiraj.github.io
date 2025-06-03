@@ -15,30 +15,30 @@
     
     /* Backgrounds */
     --bg-body: #f5f5f7; /* Very light Apple-like grey */
-    --bg-container-glass-base: rgba(255, 255, 255, 0.7); /* Base for glass */
-    --bg-card-glass-base: rgba(255, 255, 255, 0.65);
+    --bg-container-glass-base: rgba(255, 255, 255, 0.72); /* Base for glass, slightly more opaque */
+    --bg-card-glass-base: rgba(255, 255, 255, 0.68);
 
     /* Borders & Shadows */
     --border-color-soft: rgba(0, 0, 0, 0.08);
-    --border-color-glass-edge: rgba(255, 255, 255, 0.5); /* Subtle edge highlight */
-    --shadow-glass: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0,0,0,0.05);
+    --border-color-glass-edge: rgba(255, 255, 255, 0.4); /* Subtle edge highlight */
+    --shadow-glass: 0 18px 40px rgba(0, 0, 0, 0.08), 0 6px 18px rgba(0,0,0,0.06); /* Slightly adjusted shadow */
     
     /* Radii */
-    --border-radius-main: 22px; /* Slightly more rounded, Apple-like */
+    --border-radius-main: 22px;
     --border-radius-card: 18px;
     --border-radius-button: 8px;
 
     /* Rainbow Gradient Colors (subtle) */
-    --rainbow-color-1: hsla(190, 80%, 75%, 0.6); /* Light Blue */
-    --rainbow-color-2: hsla(140, 70%, 78%, 0.6); /* Light Green */
-    --rainbow-color-3: hsla(60, 80%, 78%, 0.6);  /* Light Yellow */
-    --rainbow-color-4: hsla(20, 80%, 80%, 0.6);  /* Light Orange/Peach */
-    --rainbow-color-5: hsla(330, 80%, 82%, 0.6); /* Light Pink */
+    --rainbow-color-1: hsla(190, 75%, 70%, 0.5); /* Light Blue - adjusted alpha */
+    --rainbow-color-2: hsla(140, 65%, 72%, 0.5); /* Light Green - adjusted alpha */
+    --rainbow-color-3: hsla(60, 75%, 72%, 0.5);  /* Light Yellow - adjusted alpha */
+    --rainbow-color-4: hsla(20, 75%, 75%, 0.5);  /* Light Orange/Peach - adjusted alpha */
+    --rainbow-color-5: hsla(330, 75%, 78%, 0.5); /* Light Pink - adjusted alpha */
   }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    line-height: 1.65; /* Slightly more open leading */
+    line-height: 1.65;
     color: var(--text-color);
     background-color: var(--bg-body);
     margin: 0;
@@ -49,44 +49,47 @@
     word-wrap: break-word;
   }
 
-  /* Base for all glass elements */
   .glass-effect {
-    position: relative; /* Crucial for pseudo-elements */
-    overflow: hidden;   /* Crucial for clipping pseudo-elements */
+    position: relative;
+    overflow: hidden;
     background-color: var(--bg-container-glass-base);
-    backdrop-filter: blur(20px) saturate(180%); /* Increased blur and saturation */
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(22px) saturate(170%); /* Slightly adjusted blur/saturate */
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
     border: 1px solid var(--border-color-glass-edge);
     box-shadow: var(--shadow-glass);
   }
 
-  /* Rainbow highlight pseudo-element for glass */
   .glass-effect::before {
     content: "";
     position: absolute;
-    bottom: 0; /* Position at the bottom */
-    left: -50%; /* Start gradient off-screen to allow it to sweep across */
-    width: 200%; /* Make it wide enough to sweep */
-    height: 70%; /* Adjust height of the rainbow effect area */
+    /* Make it cover the entire element and extend slightly below for a softer start */
+    top: 0; 
+    left: -75%; /* Start further off-screen for wider sweep */
+    width: 250%; /* Wider for a more spread gradient */
+    height: 150%; /* Taller, so the gradient origin is effectively below the element */
+    
     background-image: linear-gradient(
-      90deg, /* Control angle of the rainbow stripes */
-      transparent,
-      var(--rainbow-color-1) 20%,
+      75deg, /* Adjusted angle slightly */
+      transparent 5%, /* Start with more transparency */
+      var(--rainbow-color-1) 25%,
       var(--rainbow-color-2) 40%,
-      var(--rainbow-color-3) 60%,
-      var(--rainbow-color-4) 80%,
-      var(--rainbow-color-5),
-      transparent
+      var(--rainbow-color-3) 55%,
+      var(--rainbow-color-4) 70%,
+      var(--rainbow-color-5) 85%,
+      transparent 95% /* End with more transparency */
     );
-    opacity: 0.35; /* Make it very subtle */
-    filter: blur(35px); /* Heavy blur for diffusion */
-    z-index: 1; /* Behind content but above main background */
-    pointer-events: none; /* Allow clicks to pass through */
-    border-bottom-left-radius: inherit; /* Match parent's rounding */
-    border-bottom-right-radius: inherit;
+    
+    opacity: 0.20; /* Reduced opacity for more subtlety due to larger coverage */
+    filter: blur(50px); /* Increased blur significantly for diffusion */
+    z-index: 1;
+    pointer-events: none;
+    
+    /* Transform to push the 'origin' of the gradient further down */
+    /* This makes the colors appear to gradually rise from the bottom */
+    transform: translateY(30%); /* Pushes the pseudo-element down, so only its top part with colors is visible */
+    border-radius: inherit; /* Inherit all border radii if needed, or specify for bottom if pseudo is only at bottom */
   }
   
-  /* Content within glass needs to be above the pseudo-element */
   .glass-effect > * {
     position: relative;
     z-index: 2;
@@ -97,9 +100,8 @@
     margin: 40px auto;
     padding: 35px 45px;
     border-radius: var(--border-radius-main);
-    /* Inherits .glass-effect styles */
   }
-  .container.consultation-container { /* Specific class for consultation if different size needed */
+  .container.consultation-container {
     max-width: 850px;
   }
 
@@ -109,13 +111,13 @@
     line-height: 1.3;
   }
   
-  h1 { font-size: 2.6em; margin-bottom: 0.3em; } /* Slightly reduced default H1 */
+  h1 { font-size: 2.6em; margin-bottom: 0.3em; }
   h2 { font-size: 1.9em; margin-top: 2em; margin-bottom: 1em; border-bottom: 1px solid var(--border-color-soft); padding-bottom: 0.5em; }
   h3 { font-size: 1.5em; margin-top: 1.8em; margin-bottom: 0.7em; color: #2c3e50; }
   h4 { font-size: 1.2em; margin-top: 1.5em; margin-bottom: 0.5em; color: #34495e; }
 
   p, li {
-    font-size: 1.02em; /* Slightly smaller base paragraph text */
+    font-size: 1.02em;
     color: var(--text-color);
     margin-bottom: 0.8em;
   }
@@ -136,7 +138,7 @@
     margin-bottom: 40px;
   }
   .profile-header img {
-    border: 3px solid rgba(255,255,255,0.7); /* Lighter border for profile pic */
+    border: 3px solid rgba(255,255,255,0.7);
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     width: 160px;
     border-radius: 50%;
@@ -144,7 +146,7 @@
   .profile-header h1 {
     margin-top: 0.5em;
     margin-bottom: 0.1em;
-    font-size: 2.8em; /* Restore profile header H1 size */
+    font-size: 2.8em;
   }
   .profile-header b {
     font-size: 1.1em;
@@ -168,10 +170,10 @@
     color: #ffffff !important;
     padding: 12px 24px;
     border-radius: var(--border-radius-button);
-    font-weight: 600; /* Apple often uses semi-bold for buttons */
+    font-weight: 600;
     text-decoration: none;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
-    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); /* Softer button shadow */
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
     border: none;
     margin: 8px 8px 8px 0;
   }
@@ -190,11 +192,10 @@
     padding: 25px;
     border-radius: var(--border-radius-card);
     margin-bottom: 25px;
-    background-color: var(--bg-card-glass-base); /* Specific base for cards */
-    /* Inherits .glass-effect styles */
+    background-color: var(--bg-card-glass-base);
   }
   .terms-section .term-item {
-    padding: 20px 25px; /* Slightly different padding for term items */
+    padding: 20px 25px;
   }
 
 
@@ -216,9 +217,9 @@
     margin-bottom: 0.6em;
   }
   ul li::before {
-    content: "•"; /* Simple dot, Apple-like */
+    content: "•";
     position: absolute;
-    left: 0.5em; /* Adjust for dot */
+    left: 0.5em;
     color: var(--primary-color);
     font-weight: bold;
     font-size: 1em;
@@ -229,15 +230,15 @@
   .tech-toolbox ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Slightly smaller gap */
+    gap: 10px;
     padding-left: 0;
     margin-top: 10px;
   }
   .tech-toolbox li {
-    background-color: rgba(0, 123, 255, 0.08); /* Even lighter for pills */
+    background-color: rgba(0, 123, 255, 0.08);
     color: var(--primary-color);
     padding: 7px 14px;
-    border-radius: 15px; /* More rounded pills */
+    border-radius: 15px;
     font-size: 0.88em;
     font-weight: 500;
     list-style-type: none;
@@ -246,7 +247,7 @@
   .tech-toolbox li::before { content: ""; }
   
   .tech-category-title {
-    font-weight: 600; /* Semi-bold */
+    font-weight: 600;
     color: var(--heading-color);
     margin-top: 15px;
     margin-bottom: 8px;
@@ -272,7 +273,7 @@
 
   .consultation-title {
     text-align: center;
-    font-size: 2.6em; /* Match H1 */
+    font-size: 2.6em;
     margin-bottom: 30px !important;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--border-color-soft);
@@ -315,7 +316,7 @@
     font-size: 0.92em;
   }
   .pros-cons-list ul li::before, ul ul li::before {
-    content: "–"; /* Em dash for nested, simpler */
+    content: "–";
     color: var(--text-muted-color);
     font-weight: bold;
     font-size: 1em;
@@ -330,7 +331,7 @@
     margin-right: 0;
     font-style: italic;
     color: var(--text-muted-color);
-    background-color: rgba(230, 242, 255, 0.5); /* Very light blue tint */
+    background-color: rgba(230, 242, 255, 0.5);
     border-radius: 0 var(--border-radius-card) var(--border-radius-card) 0;
   }
   blockquote p {
@@ -340,11 +341,11 @@
 
   .gsoc-header-image {
     width: 100%;
-    max-width: 650px; /* Slightly smaller max */
+    max-width: 650px;
     display: block;
     margin: 0 auto 30px auto;
     border-radius: var(--border-radius-card);
-    box-shadow: var(--shadow-glass); /* Use glass shadow */
+    box-shadow: var(--shadow-glass);
   }
   .gsoc-page-title {
     text-align: center;
@@ -363,8 +364,8 @@
     line-height: 1.4;
   }
   .gsoc-contributions-list li::before {
-    content: "✓"; /* SF Symbol like check */
-    color: #34C759; /* Apple Green */
+    content: "✓";
+    color: #34C759;
     top: 0;
     left: 0.4em;
   }
@@ -392,13 +393,14 @@
   @media (max-width: 992px) {
     .container { padding: 30px; margin: 30px auto; }
     .container.consultation-container { max-width: 800px; }
+    .glass-effect::before { filter: blur(45px); opacity: 0.18; }
   }
 
   @media (max-width: 768px) {
     body { padding: 5px; }
     .container { margin: 20px auto; padding: 25px 20px; }
     h1, .profile-header h1, .consultation-title, .gsoc-page-title { font-size: 2.1em; }
-    .profile-header h1 {font-size: 2.3em;} /* Keep profile H1 a bit larger */
+    .profile-header h1 {font-size: 2.3em;}
     h2 { font-size: 1.6em; }
     h3 { font-size: 1.35em; }
     h4 { font-size: 1.1em; }
@@ -411,13 +413,19 @@
     .profile-header b { font-size: 1em; }
     .gsoc-subtitle { font-size: 1em; }
     .section-divider { margin: 40px 0; }
-    .glass-effect::before { height: 60%; filter: blur(30px); opacity: 0.3; }
+    .glass-effect::before { 
+        filter: blur(40px); 
+        opacity: 0.15; 
+        transform: translateY(35%);
+        left: -100%;
+        width: 300%;
+    }
   }
 
   @media (max-width: 576px) {
     .container { padding: 20px 15px; margin: 15px auto; border-radius: 18px; }
     h1, .profile-header h1, .consultation-title, .gsoc-page-title { font-size: 1.8em; }
-    .profile-header h1 {font-size: 2em;} /* Keep profile H1 a bit larger */
+    .profile-header h1 {font-size: 2em;}
     h2 { font-size: 1.45em; }
     h3 { font-size: 1.25em; }
     p, li { font-size: 0.92em; }
@@ -432,7 +440,13 @@
     .footer-quote { font-size: 0.95em; margin-top: 40px; padding-top: 15px; }
     .button-link, .button-link.large { display: block; text-align: center; margin-left: 0; margin-right: 0; }
     .profile-header { margin-bottom: 30px; }
-    .glass-effect::before { height: 50%; filter: blur(25px); opacity: 0.25; }
+    .glass-effect::before { 
+        filter: blur(35px); 
+        opacity: 0.12; 
+        transform: translateY(40%);
+        left: -120%;
+        width: 340%;
+    }
     ul li::before {left: 0.4em;}
   }
 </style>
