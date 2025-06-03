@@ -453,7 +453,7 @@
     </ul>
     <span class="tech-category-title">Deployment:</span>
     <ul>
-      <li>GCP</li><li>AWS</li><li>FastAPI</li><li>Redis</li><li>TensorRT</li><li>Docker</li>
+      <li>GCP</li><li>AWS</li><li>FastAPI</li><li>Flask</li><li>Redis</li><li>TensorRT</li><li>Docker</li>
     </ul>
     <span class="tech-category-title">Tools:</span>
     <ul>
