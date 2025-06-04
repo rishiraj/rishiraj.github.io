@@ -487,14 +487,13 @@
     <ul class="pros-cons-list do-get">
       <li>Expert-level guidance and hands-on development in:
         <ul>
-          <li>Natural Language Processing (NLP)</li>
+          <li>Natural Language Processing + Generative AI</li>
           <li>Speech & Audio AI + Medical AI systems</li>
-          <li>Scalable cloud-based ML deployment (GCP, AWS)</li>
+          <li>Scalable cloud ML deployment (GCP, AWS, Hugging Face)</li>
         </ul>
       </li>
       <li>High-quality, maintainable code and models</li>
       <li>Research-backed methods and optimization</li>
-      <li>Integration with Hugging Face and GCP ecosystems</li>
     </ul>
   </section>
 
